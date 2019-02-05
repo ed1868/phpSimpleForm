@@ -1,39 +1,46 @@
 <?php 
-    if(isset($_POST['submit'])){
-     
-    $username = $_POST['username'];
-    $password = $_POST['password'];
 
-    echo $username;
-    echo $password;
+if(isset($_POST['submit'])) {
+    
+$name = array("Edwin", "Student", "Peter", "Samid", "Mohad", "Maria", "Jane", "tom");
+    
+    $minimun = 5;
+    $maximun = 10;
 
-  }
+$username = $_POST['username'];
+$password = $_POST['password'];
+    
+  if(strlen($username) < $minimun ) {
+  
+      echo "Username has to be longer than five";
+  
+  }  
+    
+    if(strlen($username) > $maximun  ) {
+  
+      echo "Username cannot be longer than 10 ";
+  
+  }  
+    
+    if(!in_array($username,$name)) {
+    
+        echo " Sorry you are not allowed";
+    
+    } else {
+    
+    echo "Welcome";
+    }
+    
+    
+    
+    
+    
+//echo "Hello" . $username;   
+//echo "Your Password is " . $password;
+
+
+}
+
+
 
 ?>
-
-<!DOCTYPE html>
-
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>PHP FUN FORM </title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="">
-  </head>
-  <body>
-
-      <form action='form.php' method='POST'>
-        <label for="username">Username : </label>
-        <input type="text" name="username" placeholder=" username..">
-        <br>
-        <label for="password">Password : </label>
-        <input type="password" name="password" placeholder="pw">
-
-        <input type="submit"></input>
-
-      </form>
-    
-
-  </body>
-</html>
